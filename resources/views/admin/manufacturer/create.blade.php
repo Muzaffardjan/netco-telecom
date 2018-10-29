@@ -38,7 +38,6 @@
                         </div>
                     @endif
 
-                    {{ Form::open(['route' => 'admin.manufacturer.edit', 'id' => $manufacturer->id]) }}
                     <form role="form" method="post" action="{{ route('admin.manufacturer.create', ['locale' => app()->getLocale()]) }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
