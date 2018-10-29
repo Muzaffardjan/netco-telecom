@@ -1,0 +1,10 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/dashboard/css/all.css": "/dashboard/css/all.css",
+    "/dashboard/js/all.js": "/dashboard/js/all.js",
+    "/dashboard/css/data-tables.css": "/dashboard/css/data-tables.css",
+    "/dashboard/js/data-tables.js": "/dashboard/js/data-tables.js",
+    "/dashboard/js/main.js": "/dashboard/js/main.js",
+    "/dashboard/css/main.css": "/dashboard/css/main.css"
+}

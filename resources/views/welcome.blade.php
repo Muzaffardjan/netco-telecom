@@ -1,3 +1,6 @@
+<?php
+use Illuminate\Support\Facades\Route;
+?>
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -66,16 +69,37 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
+            <div class="top-right links">
+                @foreach(config('app.locales') as $locale => $language)
+                    @if($locale === app()->getLocale())
+                        <a href="javascript:void(0);" style="border-bottom: 1px solid red;">
+                            {{ $language }}
+                        </a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+                        <a href="{{ route('home', ['locale' => $locale]) }}">
+                            {{ $language }}
+                        </a>
+                    @endif
+                @endforeach
+
+                <a href="{{ route('admin', ['locale' => app()->getLocale()]) }}">
+                    Dashboard
+                </a>
+
+                <a href="{{ route('register', ['locale' => app()->getLocale()]) }}">
+                    Register
+                </a>
+
+                @auth
+                    <a href="{{ route('logout', ['locales' => app()->getLocale()]) }}">
+                        Logout
+                    </a>
+                @else
+                    <a href="{{ route('login', ['locales' => app()->getLocale()]) }}">
+                        Login
+                    </a>
+                @endauth
+            </div>
 
             <div class="content">
                 <div class="title m-b-md">

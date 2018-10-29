@@ -5,9 +5,14 @@ return [
     'env' => env('APP_ENV', 'production'),
     'debug' => env('APP_DEBUG', false),
     'url' => env('APP_URL', 'http://localhost'),
-    'timezone' => 'UTC',
-    'locale' => 'en',
-    'fallback_locale' => 'en',
+    'timezone' => 'Asia/Tashkent',
+    'locale' => 'uz',
+    'locales' => [
+        'uz' => 'O\'zbekcha',
+        'ru' => 'Русский',
+        'en' => 'English',
+    ],
+    'fallback_locale' => 'uz',
     'key' => env('APP_KEY'),
     'cipher' => 'AES-256-CBC',
     'providers' => [
@@ -34,8 +39,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        \Illuminate\Html\HtmlServiceProvider::class,
 
         /** Package Service Providers... */
+//        Barryvdh\Debugbar\ServiceProvider::class,
 
         /** Application Service Providers... */
         App\Providers\AppServiceProvider::class,
@@ -78,5 +85,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => \Illuminate\Html\FormFacade::class,
+        'Html' => \Illuminate\Html\HtmlFacade::class,
     ],
 ];
