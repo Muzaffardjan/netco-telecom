@@ -67,10 +67,10 @@ class Admin extends Model implements AuthenticatableContract, AuthorizableContra
 
     public function createSuperAdmin()
     {
-        $this->username = 'muzaffardjan';
-        $this->email = 'muzaffardjan@karaev.uz';
-        $this->password = Hash::make('password', ['cost' => 12]);
-        $this->fullname = 'Muzaffardjan Karaev';
+        $this->username = 'admin';
+        $this->email = 'admin@localhost';
+        $this->password = Hash::make('admin', ['cost' => 12]);
+        $this->fullname = 'Admin';
         $this->created_at = time();
         $this->updated_at = time();
 
